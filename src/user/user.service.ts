@@ -35,6 +35,6 @@ export class UserService {
   async remove(id: number) {
     // return `This action removes a #${id} user`;
      await this.userRepository.softDelete(id);
-     await this.userRepository.update(id,{isActive:false});
+     return await this.userRepository.update(id,{isActive:false});
   }
 }
